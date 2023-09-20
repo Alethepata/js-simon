@@ -6,7 +6,7 @@ let num=genereteNum();
 
 content.innerHTML = num;
 
-let counter = limit;
+let counter = 0;
 
 // function num
 
@@ -29,18 +29,18 @@ function randomize(min, max){
 }
 
 
-// setTimeOut
-
-setTimeout (function(){
+// setInterval
+ 
+const clock =setInterval (function(){
+    counter++;
  content.classList.add('d-none');
-},counter* 1000);
+ if(counter> 1) clearInterval(clock);
+},5000);
 
-setTimeout (function(){
+const clock2 = setInterval (function(){
+    counter++;
  const numPlayer1 = prompt('numero');
- const numPlayer2 = prompt('numero');
- const numPlayer3 = prompt('numero');
- const numPlayer4 = prompt('numero');
- const numPlayer5 = prompt('numero');
+ if(counter> 1) clearInterval(clock2);
 },6000);
 
 console.log();
