@@ -12,6 +12,7 @@ let counter = 0;
 
 function genereteNum(){
  const nums = [];
+ 
   while(nums.length < limit){
  
   const numRandom = randomize(1,9); 
@@ -19,11 +20,13 @@ function genereteNum(){
   nums.push(numRandom);
 
 } 
+
 return nums;
 }
 
 
 function randomize(min, max){
+
     return Math.floor(Math.random() * (max - min + 1) + min);
     
 }
@@ -32,14 +35,23 @@ function randomize(min, max){
 // setInterval
  
 const clock =setInterval (function(){
+
     counter++;
- content.classList.add('d-none');
- if(counter> 1) clearInterval(clock);
+
+    content.classList.add('d-none');
+
+    if(counter> 1) clearInterval(clock);
+
 },5000);
 
 const clock2 = setInterval (function(){
+
     counter++;
- const numPlayer1 = prompt('numero');
+
+for ( let i= 0; i<5; i ++ ){
+    const numPlayer =parseInt(prompt('numero'));
+}
+
  if(counter> 1) clearInterval(clock2);
 },6000);
 
