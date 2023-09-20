@@ -8,6 +8,9 @@ content.innerHTML = num;
 
 let counter = 0;
 
+const player= [];
+console.log(player);
+
 // function num
 
 function genereteNum(){
@@ -49,10 +52,13 @@ const clock2 = setInterval (function(){
     counter++;
 
 for ( let i= 0; i<5; i ++ ){
+
     const numPlayer =parseInt(prompt('numero'));
+
+    player.push(numPlayer);
+
 }
 
  if(counter> 1) clearInterval(clock2);
-},6000);
 
-console.log();
+},6000);
