@@ -1,15 +1,16 @@
 const content = document.querySelector('h1');
+const contentMessage = document.querySelector('h2');
 
 const limit = 5;
 
 let num=genereteNum();
 
-content.innerHTML = num;
+content.innerHTML = num.join(' ');
 
 let counter = 0;
 
 const player= [];
-console.log(player);
+
 
 // function num
 
@@ -41,7 +42,7 @@ const clock =setInterval (function(){
 
     counter++;
 
-    content.classList.add('d-none');
+    content.innerHTML = ('');
 
     if(counter> 1) clearInterval(clock);
 
@@ -57,8 +58,27 @@ for ( let i= 0; i<5; i ++ ){
 
     player.push(numPlayer);
 
+
+    const guessed= [];
+    for(let p = 0; p < player.length; p++){
+        const nPlayer = player[p];
+        if( num.includes(nPlayer)){
+            guessed.push(nPlayer);
+           
+        }
+      
+    }console.log(guessed);
+    if(guessed.length === 0){
+        contentMessage.innerHTML = 'Non hai indovinato nemmeno un numero'; 
+    }else if (guessed.length === 5) {
+        contentMessage.innerHTML = ` Hai indovinato tutti i numeri : ${guessed.join(' ')}`;
+    }else{
+        contentMessage.innerHTML = ` Hai indovinato ${guessed.length} numeri : ${guessed.join(' ')}`;
+    }
+    
 }
 
  if(counter> 1) clearInterval(clock2);
 
 },6000);
+
